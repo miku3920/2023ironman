@@ -1,0 +1,18 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+
+      - run: echo "${{ secrets.KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
+
+      - run: ssh ${{ secrets.USER_HOST }} 'cd /var/www/html && git pull'
