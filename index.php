@@ -1,5 +1,8 @@
 <?php
 
+header('Cache-Control: public');
+header('Cache-Control: max-age=3600', false);
+
 $title = '2023ironman - by miku3920';
 $hello = 'Hello PHP-FPM!!';
 $ironman_link = 'https://ithelp.ithome.com.tw/users/20132916/ironman/6281';
