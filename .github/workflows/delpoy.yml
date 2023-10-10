@@ -18,4 +18,4 @@ jobs:
       - run: echo "${{ secrets.KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
 
       # 連線進正式環境，並且更新程式
-      - run: ssh ${{ secrets.USER_HOST }} 'cd /var/www/html && git pull'
+      - run: ssh ${{ secrets.USER_HOST }} 'cd /srv/2023ironman && git pull'
