@@ -1,0 +1,4 @@
+{
+    "phpSniffer.run": "onSave",
+    "phpSniffer.autoDetect": true,
+}
