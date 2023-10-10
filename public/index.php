@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 header('Cache-Control: public');
 header('Cache-Control: max-age=3600', false);
 
