@@ -1,28 +1,55 @@
 <?php
 
-declare(strict_types=1);
+use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Http\Request;
 
-header('Cache-Control: public');
-header('Cache-Control: max-age=3600', false);
+define('LARAVEL_START', microtime(true));
 
-$title = '2023ironman - by miku3920';
-$hello = 'Hello PHP-FPM in public directory!!';
-$ironman_link = 'https://ithelp.ithome.com.tw/users/20132916/ironman/6281';
-$ironman_title = '嘿，稍等一下！別急著開發功能，先來打造 Walking Skeleton 吧！';
+/*
+|--------------------------------------------------------------------------
+| Check If The Application Is Under Maintenance
+|--------------------------------------------------------------------------
+|
+| If the application is in maintenance / demo mode via the "down" command
+| we will load this file so that any pre-rendered content can be shown
+| instead of starting the framework, which could cause an exception.
+|
+*/
 
-?><!DOCTYPE html>
-<html lang="en">
+if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+    require $maintenance;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader for
+| this application. We just need to utilize it! We'll simply require it
+| into the script here so we don't need to manually load our classes.
+|
+*/
 
-<body>
-    <h1 align="center"><?= $title ?></h1>
-    <p align="center"><?= $hello ?></p>
-    <p align="center"><a href="<?= $ironman_link ?>"><?= $ironman_title ?></a></p>
-</body>
+require __DIR__.'/../vendor/autoload.php';
 
-</html>
+/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+|
+| Once we have the application, we can handle the incoming request using
+| the application's HTTP kernel. Then, we will send the response back
+| to this client's browser, allowing them to enjoy our application.
+|
+*/
+
+$app = require_once __DIR__.'/../bootstrap/app.php';
+
+$kernel = $app->make(Kernel::class);
+
+$response = $kernel->handle(
+    $request = Request::capture()
+)->send();
+
+$kernel->terminate($request, $response);
