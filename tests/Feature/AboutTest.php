@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -8,7 +10,7 @@ use Tests\TestCase;
 
 class AboutTest extends TestCase {
 
-    public function test_about_should_show_hello_laravel(): void {
+    public function testAboutShouldShowHelloLaravel(): void {
         $response = $this->get('/about/');
 
         $response->assertStatus(200);
