@@ -24,10 +24,10 @@ jobs:
       # 連線進正式環境，並且更新程式、函式庫、快取
       - run: ssh ${{ secrets.USER_HOST }} '
           cd /srv/2023ironman
-          git pull
-          composer install --optimize-autoloader --no-dev
-          php artisan config:cache
-          php artisan event:cache
-          php artisan route:cache
-          php artisan view:cache
+          && git pull
+          && composer install --optimize-autoloader --no-dev
+          && php artisan config:cache
+          && php artisan event:cache
+          && php artisan route:cache
+          && php artisan view:cache
           '
