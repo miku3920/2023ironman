@@ -12,6 +12,10 @@
     <arg name="basepath" value="./" />
     <arg name="tab-width" value="4" />
 
+    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+        <exclude-pattern>public/index\.php</exclude-pattern>
+    </rule>
+
     <rule ref="PSR12">
         <!-- 排除類別大括號必須在下一行 -->
         <exclude name="PSR2.Classes.ClassDeclaration.OpenBraceNewLine" />

@@ -1,4 +1,4 @@
-<?php // phpcs:ignore PSR1.Files.SideEffects
+<?php
 
 declare(strict_types=1);
 
