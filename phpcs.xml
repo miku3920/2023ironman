@@ -103,4 +103,14 @@
             <property name="disallowSimpleSyntax" value="true" />
         </properties>
     </rule>
+
+    <!-- 必須要有 declare(strict_types=1); -->
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="declareOnFirstLine" value="false" />
+            <property name="linesCountBeforeDeclare" value="1" />
+            <property name="linesCountAfterDeclare" value="1" />
+            <property name="spacesCountAroundEqualsSign" value="0" />
+        </properties>
+    </rule>
 </ruleset>
