@@ -90,6 +90,21 @@
             <property name="absoluteNestingLevel" value="3" />
         </properties>
     </rule>
+    <!-- 屬性間距為零，前後必須空一行 (trait bug) -->
+    <!-- <rule ref="Squiz.WhiteSpace.MemberVarSpacing">
+        <properties>
+            <property name="spacing" value="0" />
+            <property name="spacingBeforeFirst" value="1" />
+        </properties>
+    </rule> -->
+    <!-- 方法間距為一，前後必須空一行 -->
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="spacingBeforeFirst" value="1" />
+            <property name="spacingAfterLast" value="0" />
+        </properties>
+    </rule>
 
     <!-- 使用 __DIR__，而不是 dirname(__FILE__) -->
     <rule ref="Modernize" />
