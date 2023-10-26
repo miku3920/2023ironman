@@ -2,12 +2,12 @@
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="PSR12" xsi:noNamespaceSchemaLocation="../../../phpcs.xsd">
     <description>The PSR-12 coding standard.</description>
 
-    <exclude-pattern>bootstrap</exclude-pattern>
-    <exclude-pattern>docker</exclude-pattern>
-    <exclude-pattern>node_modules</exclude-pattern>
-    <exclude-pattern>resources</exclude-pattern>
-    <exclude-pattern>storage</exclude-pattern>
-    <exclude-pattern>vendor</exclude-pattern>
+    <file>app</file>
+    <file>config</file>
+    <file>database</file>
+    <file>public</file>
+    <file>routes</file>
+    <file>tests</file>
 
     <arg name="colors" />
     <arg name="basepath" value="./" />

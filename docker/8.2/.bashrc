@@ -134,8 +134,8 @@ alias vi='vim'
 alias h="history"
 alias hg="h | grep"
 
-alias cs="vendor/bin/phpcs app config database public routes tests"
-alias cbf="vendor/bin/phpcbf app config database public routes tests"
+alias cs="vendor/bin/phpcs"
+alias cbf="vendor/bin/phpcbf"
 
 alias unit="vendor/bin/phpunit"
 alias pest="vendor/bin/pest"
