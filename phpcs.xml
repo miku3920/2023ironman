@@ -15,6 +15,7 @@
 
     <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
         <exclude-pattern>public/index\.php</exclude-pattern>
+        <exclude-pattern>tests/Pest\.php</exclude-pattern>
     </rule>
 
     <rule ref="PSR12">
